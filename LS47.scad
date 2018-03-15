@@ -4,8 +4,8 @@
 
 //TODO: round corners?
 
-font = "Monospace"; //URW Bookman L looks nicely here as well
-font2 = "Droid Sans Mono";
+font = "Consolas"; //URW Bookman L looks nicely here as well
+font2 = "Century Schoolbook";
 
 //inch-sized tiles look imperial.
 tilesize=25.4;
