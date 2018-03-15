@@ -47,59 +47,81 @@ module tilec(letter, x, y, c, lang) {
 }
 
 //tiles
-module tile(letter,x,y) {
-   tilec(letter,x,y,"darkgray","EN");
+module tile(letter,x,y,lang) {
+   tilec(letter,x,y,"darkgray",lang);
 }
 
-tile("_",0,0);
-tile("A",1,0);
-tile("B",2,0);
-tile("C",3,0);
-tile("D",4,0);
-tile("E",5,0);
-tile("F",6,0);
-tile("G",0,1);
-tile("H",1,1);
-tile("I",2,1);
-tile("J",3,1);
-tile("K",4,1);
-tile("L",5,1);
-tile("M",6,1);
-tile("N",0,2);
-tile("O",1,2);
-tile("P",2,2);
-tile("Q",3,2);
-tile("R",4,2);
-tile("S",5,2);
-tile("T",6,2);
-tile("U",0,3);
-tile("V",1,3);
-tile("W",2,3);
-tile("X",3,3);
-tile("Y",4,3);
-tile("Z",5,3);
-tile(".",6,3);
-tile("0",0,4);
-tile("1",1,4);
-tile("2",2,4);
-tile("3",3,4);
-tile("4",4,4);
-tile("5",5,4);
-tile("6",6,4);
-tile("7",0,5);
-tile("8",1,5);
-tile("9",2,5);
-tile(",",3,5);
-tile("-",4,5);
-tile("+",5,5);
-tile("*",6,5);
-tile("/",0,6);
-tile(":",1,6);
-tile("?",2,6);
-tile("!",3,6);
-tile("'",4,6);
-tile("(",5,6);
-tile(")",6,6);
+module tiles(
+    lang,
+    letter_0_0, letter_1_0, letter_2_0, letter_3_0, letter_4_0, letter_5_0, letter_6_0,
+    letter_0_1, letter_1_1, letter_2_1, letter_3_1, letter_4_1, letter_5_1, letter_6_1,
+    letter_0_2, letter_1_2, letter_2_2, letter_3_2, letter_4_2, letter_5_2, letter_6_2,
+    letter_0_3, letter_1_3, letter_2_3, letter_3_3, letter_4_3, letter_5_3, letter_6_3,
+    letter_0_4, letter_1_4, letter_2_4, letter_3_4, letter_4_4, letter_5_4, letter_6_4,
+    letter_0_5, letter_1_5, letter_2_5, letter_3_5, letter_4_5, letter_5_5, letter_6_5,
+    letter_0_6, letter_1_6, letter_2_6, letter_3_6, letter_4_6, letter_5_6, letter_6_6
+) {
+    tile(letter_0_0, 0, 0, lang);
+    tile(letter_1_0, 1, 0, lang);
+    tile(letter_2_0, 2, 0, lang);
+    tile(letter_3_0, 3, 0, lang);
+    tile(letter_4_0, 4, 0, lang);
+    tile(letter_5_0, 5, 0, lang);
+    tile(letter_6_0, 6, 0, lang);
+    tile(letter_0_1, 0, 1, lang);
+    tile(letter_1_1, 1, 1, lang);
+    tile(letter_2_1, 2, 1, lang);
+    tile(letter_3_1, 3, 1, lang);
+    tile(letter_4_1, 4, 1, lang);
+    tile(letter_5_1, 5, 1, lang);
+    tile(letter_6_1, 6, 1, lang);
+    tile(letter_0_2, 0, 2, lang);
+    tile(letter_1_2, 1, 2, lang);
+    tile(letter_2_2, 2, 2, lang);
+    tile(letter_3_2, 3, 2, lang);
+    tile(letter_4_2, 4, 2, lang);
+    tile(letter_5_2, 5, 2, lang);
+    tile(letter_6_2, 6, 2, lang);
+    tile(letter_0_3, 0, 3, lang);
+    tile(letter_1_3, 1, 3, lang);
+    tile(letter_2_3, 2, 3, lang);
+    tile(letter_3_3, 3, 3, lang);
+    tile(letter_4_3, 4, 3, lang);
+    tile(letter_5_3, 5, 3, lang);
+    tile(letter_6_3, 6, 3, lang);
+    tile(letter_0_4, 0, 4, lang);
+    tile(letter_1_4, 1, 4, lang);
+    tile(letter_2_4, 2, 4, lang);
+    tile(letter_3_4, 3, 4, lang);
+    tile(letter_4_4, 4, 4, lang);
+    tile(letter_5_4, 5, 4, lang);
+    tile(letter_6_4, 6, 4, lang);
+    tile(letter_0_5, 0, 5, lang);
+    tile(letter_1_5, 1, 5, lang);
+    tile(letter_2_5, 2, 5, lang);
+    tile(letter_3_5, 3, 5, lang);
+    tile(letter_4_5, 4, 5, lang);
+    tile(letter_5_5, 5, 5, lang);
+    tile(letter_6_5, 6, 5, lang);
+    tile(letter_0_6, 0, 6, lang);
+    tile(letter_1_6, 1, 6, lang);
+    tile(letter_2_6, 2, 6, lang);
+    tile(letter_3_6, 3, 6, lang);
+    tile(letter_4_6, 4, 6, lang);
+    tile(letter_5_6, 5, 6, lang);
+    tile(letter_6_6, 6, 6, lang);
+}
+
+tiles(
+    "EN",
+    "_", "A", "B", "C", "D", "E", "F",
+    "G", "H", "I", "J", "K", "L", "M",
+    "N", "O", "P", "Q", "R", "S", "T",
+    "U", "V", "W", "X", "Y", "Z", ".",
+    "0", "1", "2", "3", "4", "5", "6",
+    "7", "8", "9", ",", "-", "+", "*",
+    "/", ":", "?", "!", "'", "(", ")"
+)
 
 //the token
 translate([-off/2,off/2,0]) {
