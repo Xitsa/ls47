@@ -8,11 +8,11 @@ font = "Consolas"; //URW Bookman L looks nicely here as well
 font2 = "Century Schoolbook";
 
 //inch-sized tiles look imperial.
-tilesize=25.4;
+tilesize=32;
 //you might like them a bit larger if you want to use this in nature.
 
 //distance between tiles
-off=tilesize*1.05;
+off=tilesize*1.25;
 //height 1/8"
 tileheight=tilesize/8;
 
