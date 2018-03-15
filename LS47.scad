@@ -17,7 +17,7 @@ off=tilesize*1.25;
 tileheight=tilesize/8;
 
 //this produces one tile
-module tilec(letter, x, y, c) {
+module tilec(letter, x, y, c, lang) {
   translate([x*off,(6-y)*off,0]) {
     difference() {
       color(c)
@@ -37,13 +37,18 @@ module tilec(letter, x, y, c) {
         linear_extrude(height=tileheight/4)
           text(str(y), font=font2, size=tilesize*.2,
                halign="center", valign="center");
+      color(c)
+      translate([tilesize*.88, tilesize*.83, tileheight*.76])
+        linear_extrude(height=tileheight/4)
+          text(lang, font=font2, size=tilesize*.125,
+               halign="right", valign="center");
     }
   }
 }
 
 //tiles
 module tile(letter,x,y) {
-   tilec(letter,x,y,"darkgray");
+   tilec(letter,x,y,"darkgray","EN");
 }
 
 tile("_",0,0);
